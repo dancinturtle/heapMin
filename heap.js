@@ -41,7 +41,7 @@ var Heap = function(){
 }
 
 var newheap = new Heap();
-newheap.add(3).add(5).add(8).add(17).add(1).add(24);
+newheap.add(3).add(5).add(8).add(17).add(1).add(24).add(-2).add(2).add(77).add(99).add(-3).add(4);
 console.log(newheap.array);
 
 
