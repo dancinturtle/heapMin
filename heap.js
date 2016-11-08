@@ -36,12 +36,33 @@ var Heap = function(){
 	}
 	this.remove = function(){
 		console.log("Your code should go here!")
+		this.swap(1, this.array.length-1);
+		this.array.pop();
+		console.log("Popped array: " + this.array);
+		// parent must be smaller than children
+		var parent = 1;
+		var child1 = 2;
+		var child2 = 3;
+		while (this.array[parent] > this.array[child1] || this.array[parent] > this.array[child2]){
+			var min = (this.array[child1] < this.array[child2]) ? child1: child2
+			this.swap(parent, min);
+			parent = min;
+			child1 = parent * 2
+			child2 = (parent * 2) + 1
+		}
 		// When somone uses the remove method, the smallest value should be removed and returned and the heap should be reorganized.
+		console.log("Sorted array: " + this.array);
 	}
 }
 
 var newheap = new Heap();
 newheap.add(3).add(5).add(8).add(17).add(1).add(24).add(-2).add(2).add(77).add(99).add(-3).add(4);
 console.log(newheap.array);
+newheap.remove();
+
+
+// [,-2,2,1,3,5,4,8,17,77,99,24]
+
+
 
 
